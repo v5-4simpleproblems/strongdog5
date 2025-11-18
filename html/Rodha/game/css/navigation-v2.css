@@ -1,0 +1,386 @@
+	@font-face {
+	  font-family: 'Nunito';
+	  src: url('/fonts/nunito-bold.woff2') format('woff2');
+	  font-weight: 500;
+	  font-style: normal;
+	  font-display: swap;
+	}
+
+	@font-face {
+	  font-family: 'Nunito';
+	  src: url('/fonts/nunito-extrabold.woff2') format('woff2');
+	  font-weight: 700;
+	  font-style: normal;
+	  font-display: swap;
+	}
+
+	@font-face {
+	  font-family: 'Nunito';
+	  src: url('/fonts/nunito-black.woff2') format('woff2');
+	  font-weight: 900;
+	  font-style: normal;
+	  font-display: swap;
+	}
+
+	#header-nav {
+	text-align:center;
+	background-color: #333399;
+  	padding-top: 10px;
+	padding-bottom: 6px;
+	border: none;
+	position: relative;
+  	justify-content: center;
+  	display: flex;
+  	flex-direction: row;
+  	flex-wrap: wrap;
+	gap: 12px;  /* adjust as needed */
+	}
+
+	/* Replace image buttons with styled text buttons */
+	#header-nav .nav-btn {
+	  display: inline-block;        /* keeps alignment in your flex row */
+	  padding: 14px 10px;
+	  border-radius: 12px;
+	  font-family: 'Nunito', Arial, sans-serif; /* Nunito first */
+	  font-weight: 700;                          /* Nunito ExtraBold */
+	  font-size: 26px;
+	  line-height: 1; 
+	  color: #fff;
+	  text-decoration: none;
+	  text-align: center;
+	  width: 200px;             /* optional: keep buttons more equal */
+	  min-block-size: 44px;            /* WCAG touch target guidance */
+	}
+
+
+	#header-nav:before,
+	#header-nav:after {
+	  display: none;
+	}
+
+	#header-nav a {
+	  display: block;
+	  margin: 2px;
+	}
+	/* Per-button colors */
+	.nav-math    { background: #0099ff; }
+	.nav-stories { background: #ff6633; }
+	.nav-logic   { background: #009999; }
+	.nav-breaks  { background: #6666ff; }
+	.nav-library { background: #e24a62; }
+
+	/* Hover effect to replace your old image scaling */
+	#header-nav .nav-btn:hover {
+	  transform: scale(1.05);
+	}
+
+	/* Keep keyboard focus obvious */
+	#header-nav .nav-btn:focus-visible {
+	  outline: 3px solid #ffbf00;
+	  outline-offset: 2px;
+	}
+
+	/* 1) Make sure links keep white text (no visited purple) */
+	#header-nav .nav-btn:visited { color: #fff; }
+
+	/* 2) Avoid double spacing: your container has gap + you add margins to all <a>.
+		  Neutralize margins for the new text buttons only. */
+	#header-nav .nav-btn { margin: 0; }
+	
+	/* 3) Respect users who prefer reduced motion (turn off the scale hover) */
+	@media (prefers-reduced-motion: reduce) {
+	  #header-nav .nav-btn:hover { transform: none; }
+	}
+
+	/* 4) Keyboard users: keep focus strong everywhere, even if UA changes */
+	#header-nav .nav-btn:focus { outline: none; } /* avoid double ring */
+	#header-nav .nav-btn:focus-visible {
+	  outline: 3px solid #ffbf00;
+	  outline-offset: 2px;
+	}
+
+	/* 5) Current page styling (optional but recommended)
+		  Add aria-current="page" to the active link in your HTML. */
+	#header-nav .nav-btn[aria-current="page"] {
+	  box-shadow: 0 0 0 3px rgba(255,255,255,.35) inset;
+	  /* or: border: 3px solid rgba(255,255,255,.35); */
+	}
+
+	/* 6) High-contrast/Windows HC mode: make sure buttons remain visible */
+	@media (forced-colors: active) {
+	  #header-nav { background: CanvasText; }
+	  #header-nav .nav-btn {
+		background: ButtonFace;
+		color: ButtonText;
+		border: 2px solid ButtonText;
+	  }
+	}
+
+
+	.grade-level-navigation {
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
+	  padding: 10px 0 20px;
+	  gap: 12px; /* space between buttons */
+	}
+
+	.grade-level-navigation a {
+	  display: block;
+	  margin: 0px;
+	}
+
+	.grade-level-navigation-2 a:hover img {
+	  transform: scale(1.10);
+	}
+
+	.grade-btn {
+	  display: inline-flex;
+	  align-items: center;
+	  justify-content: center;
+	  inline-size: 100px;     /* width */
+	  block-size: 40px;       /* height */
+	  border-radius: 8px;
+	  font-family: 'Nunito', Arial, sans-serif;
+	  font-weight: 700;       /* Nunito ExtraBold */
+	  font-size: 30px;
+	  color: #fff;
+	  text-decoration: none;
+	  text-align: center;
+	  transition: transform .2s ease, filter .2s ease;
+	}
+
+	/* No color change on hover/visited */
+	.grade-btn:visited { color: #fff; }
+	.grade-btn:hover   { transform: scale(1.08); }
+	.grade-btn:active  { transform: scale(1.02); }
+
+	/* Keyboard focus stays visible */
+	.grade-btn:focus-visible {
+	  outline: 3px solid #ffbf00;
+	  outline-offset: 2px;
+	}
+
+	/* Match nav: no visited color + consistent focus + reduced motion */
+	.grade-btn:visited { color: #fff; }
+	@media (prefers-reduced-motion: reduce) { .grade-btn:hover { transform: none; } }
+	.grade-btn:focus { outline: none; }
+	.grade-btn:focus-visible { outline: 3px solid #ffbf00; outline-offset: 2px; }
+
+	/* Optional: same touch target */
+	.grade-btn { min-block-size: 44px; }
+
+	/* Grade-specific colors */
+	.grade-k { background:#9940cc; }  /* purple */
+	.grade-1 { background:#cc9933; }  /* gold */
+	.grade-2 { background:#0099ff; }  /* blue */
+	.grade-3 { background:#e24a62; }  /* red */
+	.grade-4 { background:#009999; }  /* teal */
+	.grade-5 { background:#ff6633; }  /* orange */
+	.grade-6 { background:#6666ff; }  /* indigo */	
+
+	/* Grade buttons: lock white/no-underline across all states */
+	.grade-level-navigation .grade-btn,
+	.grade-level-navigation .grade-btn:link,
+	.grade-level-navigation .grade-btn:visited,
+	.grade-level-navigation .grade-btn:hover,
+	.grade-level-navigation .grade-btn:active,
+	.grade-level-navigation .grade-btn:focus {
+	  color: #fff;
+	  text-decoration: none;
+	}
+
+	/* Search button color */
+	.grade-btn.grade-search {
+	  background: #FFCC00;
+	  display: inline-flex;           /* ensure perfect centering */
+	  align-items: center;
+	  justify-content: center;
+	  font-size: 28px;                /* emoji size; tweak 20–26px */
+	  line-height: 1;                 /* avoids vertical wobble */
+	}
+
+	/* Optional: slightly enlarge on hover like other buttons, if desired */
+	// .grade-btn.grade-search:hover { transform: translateY(-1px); }
+
+	/* High-contrast accessibility */
+	@media (forced-colors: active) {
+	  .grade-btn.grade-search {
+		background: ButtonFace;
+		color: ButtonText;            /* emoji often ignores color, but text fallback will show */
+		border: 2px solid ButtonText;
+	  }
+	}
+
+	.full-nav {
+		display: flex; 
+		flex-direction: row; 
+		flex-wrap: wrap; 
+		justify-content: center;
+		padding-top: 30px; 
+		padding-bottom: 0px;
+	}
+
+	.full-nav img {
+		height:auto;
+		max-width: 160px;
+	  	margin-left: 12px;
+	  	margin-right: 12px;
+	}
+
+	* {
+      box-sizing: border-box;
+    }
+
+    
+    .game-ad-wrapper {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 2px;
+	  padding-left:0;
+      gap: 0px;
+	  align-items: flex-start;
+    }
+
+    .game-tiles {
+      display: flex;
+	  flex-wrap: wrap;
+	  gap: 10px;
+	  flex: 1; 
+	  justify-content: flex-start;
+	  padding: 0;
+	  margin:0; 
+	  align-items: flex-start;
+		}
+
+    .game-tile {
+      
+	  	flex: 0 0 calc(24% - 30px);
+  		text-align: center;
+		min-width: 100px;
+    }
+
+    .game-tile img {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .game-tile h6 {
+      margin-top: 8px;
+      font-size: 18px;
+      color: #333399;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+	  max-width: 160px; 
+  	  margin-left: auto;
+  	  margin-right: auto;
+    }
+
+    .ad-column {
+      width: 300px;
+      flex-shrink: 0;
+    }
+
+    .ad-box {
+      width: 100%;
+      min-height: 250px;
+      background: #eee;
+      text-align: center;
+      padding-top: 0px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .ad-caption {
+      margin-top: 10px;
+      font-size: 16px;
+      text-align: center;
+      color: black;
+    }
+
+    .ad-caption a {
+      color: #f30;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+	@media (max-width: 440px) {
+		  #header-nav .nav-btn {
+		  display: inline-block;        /* keeps alignment in your flex row */
+		  padding: 14px 6px;
+		  border-radius: 12px;
+		  font-family: 'Nunito', Arial, sans-serif; /* Nunito first */
+		  font-weight: 700;                          /* Nunito ExtraBold */
+		  font-size: 25px;
+		  width: 190px;             /* optional: keep buttons more equal */
+		  min-block-size: 44px;            /* WCAG touch target guidance */
+		}
+	}
+
+
+	
+    /* Responsive Breakpoints */
+
+    @media (max-width: 768px) {
+
+		.full-nav {
+			display: none; 
+		}
+		
+		.game-ad-wrapper {
+			flex-direction: column;
+		  }
+
+		  .ad-column {
+			display: none;
+		  }
+
+		  .game-tiles {
+			 justify-content: center; /* Better alignment when ad disappears */
+		  }
+
+		  .game-tile {
+			flex: 0 0 calc(33.33% - 15px); /* Adjust here too */
+		  }
+	}
+		
+	@media (max-width: 992px) {
+
+      #header-nav {
+        justify-content: center;
+      }
+		
+	  .game-tile {
+        flex: 0 0 calc(33.33% - 15px); /* Adjust here too */
+      }
+
+    }
+
+	@media (max-width: 1360px) {
+
+      #header-nav {
+        justify-content: center;
+      }
+
+	  .game-tile {
+        flex: 0 0 calc(33.33% - 15px); /* Adjust here too */
+      }
+    }
+
+	@media (max-width: 1499px) {
+
+      #header-nav {
+        justify-content: center;
+      }
+
+	  .game-tile {
+        flex: 0 0 calc(33.33% - 15px); /* Adjust here too */
+      }
+	
+    }

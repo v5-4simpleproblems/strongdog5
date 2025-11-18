@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <identifier>swords-and-sandals-2</identifier>
+  <mediatype>software</mediatype>
+  <collection>softwarelibrary_flash_games</collection>
+  <collection>softwarelibrary</collection>
+  <collection>emulation</collection>
+  <date>2006</date>
+  <description>&lt;div&gt;Swords and Sandals 2 is a classic flash game, launched in 2006. The one uploaded here is version Full 2.1.0. To play the game after the end of flash, you can use Adobe Official Flash Player Projector (adobe.com/support/flashplayer/debug_downloads.html) or other emulator, like Ruffle (ruffle.rs).
+&lt;/div&gt;</description>
+  <language>eng</language>
+  <scanner>Internet Archive HTML5 Uploader 1.6.4</scanner>
+  <subject>flash; swords and sandals</subject>
+  <title>Swords And Sandals 2 (v 2.1.0)</title>
+  <uploader>gabrielmoccio@gmail.com</uploader>
+  <publicdate>2022-03-16 21:57:14</publicdate>
+  <addeddate>2022-03-16 21:57:14</addeddate>
+  <curation>[curator]validator@archive.org[/curator][date]20220316220324[/date][comment]checked for malware[/comment]</curation>
+  <year>2006</year>
+  <autoemulator>true</autoemulator>
+  <emulator>ruffle-swf</emulator>
+  <emulator_ext>swf</emulator_ext>
+  <collection_added>softwarelibrary</collection_added>
+  <collection_added>emulation</collection_added>
+  <collection>softwarelibrary_flash</collection>
+  <collection_added>softwarelibrary_flash</collection_added>
+</metadata>

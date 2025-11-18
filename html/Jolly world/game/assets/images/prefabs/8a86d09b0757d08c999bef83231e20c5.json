@@ -1,0 +1,27 @@
+{"frames": {
+
+"CheckPoint0000":
+{
+	"frame": {"x":2,"y":2,"w":367,"h":30},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":30},
+	"sourceSize": {"w":367,"h":30}
+},
+"Finish0000":
+{
+	"frame": {"x":2,"y":34,"w":367,"h":30},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":30},
+	"sourceSize": {"w":367,"h":30}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "20.0.3.25487",
+	"image": "d719ca0439c6fe2ec9e646f8d1c93a23.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":128},
+	"scale": "1"
+}
+}

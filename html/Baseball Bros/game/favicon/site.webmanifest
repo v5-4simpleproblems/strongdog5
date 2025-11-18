@@ -1,0 +1,27 @@
+{
+    "name": "Baseball Bros Unblocked",
+    "short_name": "Baseball Bros",
+    "description": "Play the #1 unblocked baseball game online! No downloads needed, works at school & work. Free multiplayer baseball with easy controls.",
+    "icons": [
+        {
+            "src": "https://baseballbrosgame.online/favicon/android-chrome-192x192.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "https://baseballbrosgame.online/favicon/android-chrome-512x512.svg",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "theme_color": "#4A90B9",
+    "background_color": "#4A90B9",
+    "display": "standalone",
+    "start_url": "https://baseballbrosgame.online/",
+    "orientation": "landscape",
+    "categories": ["games", "sports", "entertainment"],
+    "screenshots": [],
+    "shortcuts": []
+} 

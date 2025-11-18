@@ -1,0 +1,46 @@
+{
+  "default" : "en",
+  "languages" : {
+    "en" : {
+      "name": "English",
+      "code" : "en",
+      "icon" : "langUK.png"
+    },
+    "ru" : {
+      "name": "Русский",
+      "code" : "ru",
+      "icon" : "langRussia.png"
+    },
+    "fr" : {
+      "name": "Français",
+      "code" : "fr",
+      "icon" : "langFrance.png"
+    },
+    "es" : {
+      "name": "Española",
+      "code" : "es",
+      "icon" : "langSpain.png"
+    },
+    "pt" : {
+      "name": "Português",
+      "code" : "pt",
+      "icon" : "langPortugal.png"
+    },
+    "de" : {
+      "name": "Deutsch",
+      "code" : "de",
+      "icon" : "langDeutsch.png"
+    },
+    "it" : {
+      "name": "Italy",
+      "code" : "it",
+      "icon" : "langItaly.png"
+    },
+    "tr" : {
+      "name": "Türkçe",
+      "code" : "tr",
+      "icon" : "langTr.png"
+    }
+  },
+  "filter" : []
+}

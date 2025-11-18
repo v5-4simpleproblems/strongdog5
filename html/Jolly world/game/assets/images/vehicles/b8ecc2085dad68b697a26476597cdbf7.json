@@ -1,0 +1,187 @@
+{"frames": {
+
+"Bicycle_Body0000":
+{
+	"frame": {"x":2,"y":2,"w":185,"h":149},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":185,"h":149},
+	"sourceSize": {"w":185,"h":149}
+},
+"Bicycle_Pedals0000":
+{
+	"frame": {"x":189,"y":2,"w":35,"h":35},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":35},
+	"sourceSize": {"w":35,"h":35}
+},
+"Bicycle_WheelBack0000":
+{
+	"frame": {"x":226,"y":2,"w":113,"h":113},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":113,"h":113},
+	"sourceSize": {"w":113,"h":113}
+},
+"Bicycle_WheelBack_Bended0000":
+{
+	"frame": {"x":341,"y":2,"w":116,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":116,"h":80},
+	"sourceSize": {"w":116,"h":80}
+},
+"Bicycle_WheelFront0000":
+{
+	"frame": {"x":459,"y":2,"w":113,"h":113},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":113,"h":113},
+	"sourceSize": {"w":113,"h":113}
+},
+"Bicycle_WheelFront_Bended0000":
+{
+	"frame": {"x":574,"y":2,"w":116,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":116,"h":80},
+	"sourceSize": {"w":116,"h":80}
+},
+"DirtBike_Axis0000":
+{
+	"frame": {"x":692,"y":2,"w":40,"h":73},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":73},
+	"sourceSize": {"w":40,"h":73}
+},
+"DirtBike_Body0000":
+{
+	"frame": {"x":2,"y":153,"w":312,"h":159},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":312,"h":159},
+	"sourceSize": {"w":312,"h":159}
+},
+"DirtBike_WheelBack0000":
+{
+	"frame": {"x":316,"y":153,"w":126,"h":127},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":126,"h":127},
+	"sourceSize": {"w":126,"h":127}
+},
+"DirtBike_WheelBack_Bended0000":
+{
+	"frame": {"x":444,"y":153,"w":127,"h":97},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":127,"h":97},
+	"sourceSize": {"w":127,"h":97}
+},
+"DirtBike_WheelFront0000":
+{
+	"frame": {"x":573,"y":153,"w":126,"h":127},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":126,"h":127},
+	"sourceSize": {"w":126,"h":127}
+},
+"DirtBike_WheelFront_Bended0000":
+{
+	"frame": {"x":701,"y":153,"w":120,"h":86},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":86},
+	"sourceSize": {"w":120,"h":86}
+},
+"DirtBike_WheelSupport0000":
+{
+	"frame": {"x":823,"y":153,"w":136,"h":49},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":136,"h":49},
+	"sourceSize": {"w":136,"h":49}
+},
+"Hammer0000":
+{
+	"frame": {"x":167,"y":314,"w":271,"h":54},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":271,"h":54},
+	"sourceSize": {"w":271,"h":54}
+},
+"Hammer_20000":
+{
+	"frame": {"x":440,"y":314,"w":289,"h":56},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":289,"h":56},
+	"sourceSize": {"w":289,"h":56}
+},
+"Pot0000":
+{
+	"frame": {"x":731,"y":314,"w":140,"h":161},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":140,"h":161},
+	"sourceSize": {"w":140,"h":161}
+},
+"Pot_20000":
+{
+	"frame": {"x":873,"y":314,"w":140,"h":162},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":140,"h":162},
+	"sourceSize": {"w":140,"h":162}
+},
+"SkateBoard_Board0000":
+{
+	"frame": {"x":2,"y":314,"w":140,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":140,"h":32},
+	"sourceSize": {"w":140,"h":32}
+},
+"Skateboard_Wheel0000":
+{
+	"frame": {"x":144,"y":314,"w":21,"h":21},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":21},
+	"sourceSize": {"w":21,"h":21}
+},
+"YogaBall0000":
+{
+	"frame": {"x":2,"y":478,"w":155,"h":155},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":155,"h":155},
+	"sourceSize": {"w":155,"h":155}
+},
+"YogaBallHandle_Back0000":
+{
+	"frame": {"x":159,"y":478,"w":15,"h":35},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":15,"h":35},
+	"sourceSize": {"w":15,"h":35}
+},
+"YogaBall_Handle_Front0000":
+{
+	"frame": {"x":176,"y":478,"w":17,"h":35},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":17,"h":35},
+	"sourceSize": {"w":17,"h":35}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "20.0.3.25487",
+	"image": "26aedf71390da2cd54477f84aa002020.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1"
+}
+}

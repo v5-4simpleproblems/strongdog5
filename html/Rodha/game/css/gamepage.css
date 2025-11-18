@@ -1,0 +1,205 @@
+	h6 {
+    	font-size: 1.8rem;
+    	line-height: 1.6;
+   	 	letter-spacing: 0;
+		color: royalblue;
+	}
+		
+	.threeColumns {
+		display: flex;
+		justify-content: space-between;
+		/*background-color:white;*/
+	}
+
+
+	.left-column {
+		width: 20%;
+		/*min-height: 600px;  Set a fixed height for alignment */
+		display: flex;
+		flex-direction: column; /* Stack elements vertically */
+		align-items: flex-start; /* Align items to the left */
+		padding-left: 0px;
+		text-align: left; /* Left-align the image */
+		/*background-color: plum;*/
+	}
+		
+	.center-column {
+		width: 60%;
+		margin: 0 auto; /* This will keep the center column centered */
+		display: flex; /* Enable Flexbox */
+		flex-direction: column; /* Stack elements vertically */
+    	justify-content: center; /* Center horizontally */
+    	align-items: center; /* Center vertically (if needed) */
+		/*min-height: 600px;*/
+	}
+		
+	.right-column {
+		width: 20%;
+		/*min-height: 600px;  Set a fixed height for alignment */
+		display: flex;
+		flex-direction: column; /* Stack elements vertically */
+		align-items: flex-end; /* Align items to the left */
+		padding-left: 0px;
+		text-align: right; /* right-align the image */
+		/*background-color: plum;*/
+	}
+
+	.ad-caption-game {
+		margin-bottom: 0; /* Remove any default margins */
+		margin-left:5px;
+		text-align: left; /* Ensure text is left-aligned */
+		width: 100%; /* Ensure it takes full width */
+	}
+
+	#rotating-image-container { width:160px; height:600px; }
+
+
+	/* Two-column game layout */
+	.twoColumns {
+	  display: flex;
+	  gap: 20px;
+	  justify-content: flex-start; /* be explicit */
+	  align-items: flex-start;
+	  --rail-gap: 20px;
+	}
+
+	/* Left ad rail: fixed 300px */
+	.left-rail-300 {
+	  flex: 0 0 300px;
+	  width: 300px;                /* explicit width helps */
+	  display: flex;
+	  flex-direction: column;
+	  align-items: flex-start;
+	  text-align: left;            /* in case captions text-center elsewhere */
+	}
+
+	/* Make the ad slot a flex row so inner creative sits at the left */
+	#div-gpt-ad-1758911486698-0 {
+	  display: flex !important;
+	  justify-content: flex-start !important; /* left edge */
+	  align-items: flex-start !important;
+	  width: 300px;            /* rail width */
+	  min-height: 250px;
+	}
+
+    /* Kill “center me” margins that GAM creatives often add */
+	#div-gpt-ad-1758911486698-0 > div,
+	#div-gpt-ad-1758911486698-0 iframe,
+	#div-gpt-ad-1758911486698-0 img {
+	  display: block;
+	  margin: 0 !important;              /* overrides margin: 0 auto */
+	  align-self: flex-start !important; /* if creative sets auto width */
+	}
+
+	/* Optional: if a wrapper sets text-align:center, neutralize it */
+	#div-gpt-ad-1758911486698-0 * {
+	  text-align: left !important;
+	}
+
+	/* Right game rail fills remaining space */
+	.game-rail {
+	  flex: 1 1 auto;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center; /* keeps #game-col centered inside */
+	}
+
+	/* Subscriber mode: hide left rail, let game rail take full width */
+	.twoColumns.fullgame .left-rail-300 { display: none; }
+	.twoColumns.fullgame .game-rail     { flex-basis: 100%; max-width: 100%; }
+
+	#desktopGame .game-instruction,
+	#mobile-game-overlay .game-instruction {
+	  padding-top: 16px;
+	  width: 100%;
+	  text-align: center;
+	}
+
+	/* optional: constrain line length for nicer reading */
+	#desktopGame .game-instruction h6,
+	#mobile-game-overlay .game-instruction h6 {
+	  margin: 0 auto 30px;
+	  /* optional: limit line length for nicer reading */
+	  max-width: 90rem;
+	}
+
+	/* put this in your game page CSS or a <style> block on the page */
+	#mobile-game-overlay #mobile-game-content{
+	  display: flex;             /* if it was already flex, we’re just making it column */
+	  flex-direction: column;    /* vertical stack */
+	  align-items: center;       /* center the children */
+	  gap: 12px;                 /* space between button and instruction */
+	}
+
+	/* make the image a block so it doesn’t sit inline with text */
+	#mobile-game-overlay .play-image{
+	  display: block;
+	  /* optional sizing: keep your JS 300x180 sizing if you like */
+	  /* width: min(500px, 90vw); height: auto; */
+	}
+
+	/* center the text and keep it readable */
+	#mobile-game-overlay .game-instruction{
+	  text-align: center;
+	  /*max-width: 48rem;   optional line-length limit */
+	}
+
+
+	@media (max-width: 1300px) { /*1300 or less*/
+		.right-column{
+			display: none; /* Hide left and right columns */
+		}
+
+		.center-column {
+			width: 80%; /* Make the center column take up 100% */
+			margin-left:auto;
+			margin-right:auto;
+		}
+	}
+
+
+	/* Desktop: cap the game rail as if the 300px ad rail still existed */
+	@media (min-width: 1081px) {
+	  .twoColumns .left-rail-300 { flex: 0 0 300px; } /* current left rail size */
+	  .twoColumns .game-rail {
+		/* When the left rail is present: no effect (natural width is <= this cap)
+		   When the left rail is hidden: this prevents the game from growing */
+		max-width: calc(100% - 300px - var(--rail-gap));
+		margin-left: auto;
+		margin-right: auto; /* keep centered */
+	  }
+		
+	  .mobile-instruction{ display: none; }
+	}
+	
+	@media (max-width: 1080px) { /*1080 or less*/
+		.left-column, .right-column{
+			display: none; /* Hide left and right columns */
+		}
+
+		.center-column {
+			width: 90%; /* Make the center column take up 100% */
+			margin-left:auto;
+			margin-right:auto;
+		}
+		
+		.fullscreen-view {
+			display:none;
+		}
+		/* Responsive: hide left rail on <=1080px just like your old layout */
+		.twoColumns .left-rail-300 { display: none; }
+  		.twoColumns .game-rail     { width: 100%; max-width: none; }
+		
+		.mobile-instruction{
+			display: block;
+			background: #fff;          /* ensures white even if the page bg isn't */
+			padding: 16px 12px;
+			text-align: center;
+		  }
+		 .mobile-instruction h6{
+			margin: 0 auto;
+			/*max-width: 48rem;          keep line length comfortable */
+		  }
+	}	
+
+	

@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Rubik's Cube - Simulator, Solver, Timer and Tutorial</title>
+<link rel="canonical" href="https://rubikscu.be/">
+<link rel="amphtml" href="https://rubikscu.be/app/">
+<meta name="description" content="Play with the Rubik's Cube simulator, calculate the solution with the online solver, measure your times, and learn the easiest solution.">
+<meta name="keywords" content="rubiks,cube">
+<meta property="og:title" content="Rubik's Cube - Simulator, Solver, Timer and Tutorial">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rubikscu.be/">
+<meta property="og:image" content="https://rubikscu.be/img/social.jpg">
+<meta property="og:description" content="Play with the Rubik's Cube simulator, calculate the solution with the online solver, measure your times, and learn the easiest solution.">
+<script src="/cube.js"></script>
+<link rel="stylesheet" href="/cube.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7Q4BN7L0MT"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-7Q4BN7L0MT');</script>
+</head>
+<body class="activeSectiontop">
+<header>
+	<div id="intro">
+		<div id="wrapD3Cube">
+			<div id="d3Cube">
+				<div id="side1"><div><a title="Back to the top" href="#intro" class="scrollLink">Rubik’s Cube</a></div></div>
+				<div id="side2"><div><a title="Play with the online simulator" href="#simulator" class="scrollLink">Play</a></div></div>
+				<div id="side3"><div><a title="How to solve the cube" href="#tutorial" class="scrollLink">Learn</a></div></div>
+				<div id="side4"><div><a title="Cube Timer" href="#timer" class="scrollLink">Time</a></div></div>
+				<div id="side5"><div><a title="Online solver" href="#cubesolver" class="scrollLink">Solve</a></div></div>
+				<div id="side6"><div></div></div>
+			</div>
+		</div>
+		<nav>
+			<ul id="naviList">
+				<li><a href="#simulator" class="scrollLink" id="playLink">Play<br><span>Cube simulator</span></a></li>
+				<li><a href="#cubesolver" class="scrollLink" id="solveLink">Solve<br><span>Online solver</span></a></li>
+				<li><a href="#timer" class="scrollLink" id="timeLink">Time<br><span>Stopwatch</span></a></li>
+				<li><a href="#tutorial" class="scrollLink" id="learnLink">Learn<br><span>Easiest solution</span></a></li>
+			</ul>	
+		</nav>
+		<div class="socialIcons">
+			<a href="https://www.facebook.com/sharer.php?u=https://rubikscu.be" target="_blank" rel="nofollow" title="Share on Facebook" class="shareFb"></a>
+			<a href="https://x.com/intent/post?url=https%3A%2F%2Frubikscu.be" target="_blank" rel="nofollow" title="Share on X.com" class="shareTw"></a>
+		</div>
+	</div>
+</header>
+<section>
+	<div id="simulator">
+		<div id="wrapCubeControls">
+			<div id="cubeControls">
+				<a onclick="cube.shuffle(10);" id="shuffleToPlay">Scramble</a>
+				<a href="/play/" id="fullSizeIcon" title="Full screen">Play</a>
+			</div>
+		</div>
+		<div id="container" ></div>
+		<div id="fail">
+		</div>
+		<div class="sectionHelp" id="simulatorHelp">
+			<span title="Help">?</span>
+			<h2>Rubik's Cube Simulator</h2>
+			<p>Play with the online cube simulator on your computer or on your mobile&nbsp;phone.</p>
+			<p>Drag the pieces to make a face rotation or outside the cube to rotate the&nbsp;puzzle.</p>
+			<p>Apply a random scramble or go to full screen with the&nbsp;buttons.</p>
+		</div>
+		<div class="copyright">Chrome Cube Lab</div>
+		<a href="#cubesolver" class="scrollLink nextSection"><span>&#10148;</span> Online Solver</a>
+	</div>
+</section>
+<section>
+	<div id="cubesolver">
+		<div id="scrambler" class="cubeOrient13">
+			<div id="switchViewWrap">
+				<div id="switchView">
+					<a id="tothreeDView" title="3D view" class="active">3D</a>
+					<a id="toflatView" title="Flat view">Flat</a>
+					<a id="tokociembaView" title="Kociemba view">Koci</a>
+				</div>
+			</div>
+			<div id="rubiksCubeSolver" class="clearfix">
+				<div id="hibaUzenet">
+					<div id="closeHibauzenet" title="Close the box">&times;</div>
+					<span id="hiba">Error messages will be shown when a cube is not scrambled properly.</span>
+				</div>
+				<div id="wrapCube" class="threeDView">
+					<div id="face1">
+						<span class="rotArrow" id="rotUp"></span>
+						<span class="rotArrow" id="rotUpI"></span>
+						<div data-field="1" class="color1" id="sticker1"><div></div></div>
+						<div data-field="2" class="color1" id="sticker2"><div></div></div>
+						<div data-field="3" class="color1" id="sticker3"><div></div></div>
+						<div data-field="4" class="color1" id="sticker4"><div></div></div>
+						<div data-field="5" class="color1" id="sticker5"><div></div></div>
+						<div data-field="6" class="color1" id="sticker6"><div></div></div>
+						<div data-field="7" class="color1" id="sticker7"><div></div></div>
+						<div data-field="8" class="color1" id="sticker8"><div></div></div>
+						<div data-field="9" class="color1" id="sticker9"><div></div></div>
+					</div>
+					<div id="face2">
+						<span class="rotArrow" id="rotLeft"></span>
+						<span class="rotArrow" id="rotLeftI"></span>
+						<div data-field="10" class="color2" id="sticker10"><div></div></div>
+						<div data-field="11" class="color2" id="sticker11"><div></div></div>
+						<div data-field="12" class="color2" id="sticker12"><div></div></div>
+						<div data-field="13" class="color2" id="sticker13"><div></div></div>
+						<div data-field="14" class="color2" id="sticker14"><div></div></div>
+						<div data-field="15" class="color2" id="sticker15"><div></div></div>
+						<div data-field="16" class="color2" id="sticker16"><div></div></div>
+						<div data-field="17" class="color2" id="sticker17"><div></div></div>
+						<div data-field="18" class="color2" id="sticker18"><div></div></div>
+					</div>
+					<div id="face3">
+						<span class="rotArrow" id="rotFront"></span>
+						<span class="rotArrow" id="rotFrontI"></span>
+						<div data-field="19" class="color3" id="sticker19"><div></div></div>
+						<div data-field="20" class="color3" id="sticker20"><div></div></div>
+						<div data-field="21" class="color3" id="sticker21"><div></div></div>
+						<div data-field="22" class="color3" id="sticker22"><div></div></div>
+						<div data-field="23" class="color3" id="sticker23"><div></div></div>
+						<div data-field="24" class="color3" id="sticker24"><div></div></div>
+						<div data-field="25" class="color3" id="sticker25"><div></div></div>
+						<div data-field="26" class="color3" id="sticker26"><div></div></div>
+						<div data-field="27" class="color3" id="sticker27"><div></div></div>
+					</div>
+					<div id="face4">
+						<span class="rotArrow" id="rotRight"></span>
+						<span class="rotArrow" id="rotRightI"></span>
+						<div data-field="28" class="color4" id="sticker28"><div></div></div>
+						<div data-field="29" class="color4" id="sticker29"><div></div></div>
+						<div data-field="30" class="color4" id="sticker30"><div></div></div>
+						<div data-field="31" class="color4" id="sticker31"><div></div></div>
+						<div data-field="32" class="color4" id="sticker32"><div></div></div>
+						<div data-field="33" class="color4" id="sticker33"><div></div></div>
+						<div data-field="34" class="color4" id="sticker34"><div></div></div>
+						<div data-field="35" class="color4" id="sticker35"><div></div></div>
+						<div data-field="36" class="color4" id="sticker36"><div></div></div>
+					</div>
+					<div id="face5">
+						<span class="rotArrow" id="rotBack"></span>
+						<span class="rotArrow" id="rotBackI"></span>
+						<div data-field="37" class="color5" id="sticker37"><div></div></div>
+						<div data-field="38" class="color5" id="sticker38"><div></div></div>
+						<div data-field="39" class="color5" id="sticker39"><div></div></div>
+						<div data-field="40" class="color5" id="sticker40"><div></div></div>
+						<div data-field="41" class="color5" id="sticker41"><div></div></div>
+						<div data-field="42" class="color5" id="sticker42"><div></div></div>
+						<div data-field="43" class="color5" id="sticker43"><div></div></div>
+						<div data-field="44" class="color5" id="sticker44"><div></div></div>
+						<div data-field="45" class="color5" id="sticker45"><div></div></div>
+					</div>
+					<div id="face6">
+						<span class="rotArrow" id="rotDown"></span>
+						<span class="rotArrow" id="rotDownI"></span>
+						<div data-field="46" class="color6" id="sticker46"><div></div></div>
+						<div data-field="47" class="color6" id="sticker47"><div></div></div>
+						<div data-field="48" class="color6" id="sticker48"><div></div></div>
+						<div data-field="49" class="color6" id="sticker49"><div></div></div>
+						<div data-field="50" class="color6" id="sticker50"><div></div></div>
+						<div data-field="51" class="color6" id="sticker51"><div></div></div>
+						<div data-field="52" class="color6" id="sticker52"><div></div></div>
+						<div data-field="53" class="color6" id="sticker53"><div></div></div>
+						<div data-field="54" class="color6" id="sticker54"><div></div></div>
+					</div>
+				</div>
+			</div>
+			<div id="wrapCubeSettings" class="threeDViewSettings">
+				<div id="threeDsettings">
+					<a id="floatingBacks" title="Floating hidden sides">Float</a>
+					<a id="transparency" title="Toggle transparency">Transp</a>
+					<div id="threeDrots">
+						<a title="Rotate to the left" id="turnLeft">Left</a>
+						<a title="Rotate to the right" id="turnRight">Right</a>
+						<a title="Turn upside down" id="turnUp">Flip</a>
+					</div>		
+				</div>
+			</div>
+			<div id="vezerloPult">
+				<div id="palettaBackground">
+					<div id="wrapPaletta">
+						<a class="color1" title="White" data-color="1"></a>
+						<a class="color2" title="Orange" data-color="2"></a>
+						<a class="color3" title="Green" data-color="3"></a>
+						<a class="color4" title="Red" data-color="4"></a>
+						<a class="color5" title="Blue" data-color="5"></a>
+						<a class="color6" title="Yellow" data-color="6"></a>
+					</div>
+				</div>
+				<div id="cubeCommands">
+					<div id="cubeRotations">
+						<div class="row">
+							<a id="rotateF" title="Front clockwise" data-arrow="rotFront">F</a>
+							<a id="rotateR" title="Right clockwise" data-arrow="rotRight">R</a>
+							<a id="rotateU" title="Up clockwise" data-arrow="rotUp">U</a>
+							<a id="rotateB" title="Bottom clockwise" data-arrow="rotBack">B</a>
+							<a id="rotateL" title="Left clockwise" data-arrow="rotLeft">L</a>
+							<a id="rotateD" title="Down clockwise" data-arrow="rotDown">D</a>
+						</div>
+						<div class="row">
+							<a id="rotateFi" title="Front inverted" data-arrow="rotFrontI">F'</a>
+							<a id="rotateRi" title="Right inverted" data-arrow="rotRightI">R'</a>
+							<a id="rotateUi" title="Up inverted" data-arrow="rotUpI">U'</a>
+							<a id="rotateBi" title="Bottom inverted" data-arrow="rotBackI">B'</a>
+							<a id="rotateLi" title="Left inverted" data-arrow="rotLeftI">L'</a>
+							<a id="rotateDi" title="Down inverted" data-arrow="rotDownI">D'</a>
+						</div>
+					</div>
+					<div id="scrambleAlgWrap">
+						<div id="compiledScramble"></div>
+						<input type="text" name="scrambleAlg" id="scrambleAlg" maxlength="100" placeholder="Scramble algorithm. Eg. F R2 U'" size="12">
+						<span title="Execute the algorithm" id="executeScrambleAlg">✔</span>
+						<span title="Play the algorithm" id="submitScrambleAlg">►</span>
+						<div id="inputScrambleError"></div>
+					</div>
+				</div>
+				<div id="cubeCommandList">
+					<span></span>
+					<a id="clearCube" title="Remove colors">Blank<span></span></a>
+					<a id="resetCube" title="Reset to the solved position">Reset<span></span></a>
+					<a id="scrambleCube" title="Sandom scramble">Scramble<span></span></a>
+					<a id="solveCube" title="Solve the cube" href="#cubesolver">Solve<span></span></a>
+					<span></span>
+					<span class="fullWidth"></span>
+				</div>
+
+			</div>
+		</div>
+		<div id="debugMode">
+		  <div id="input">
+			<div id="generate"><button id="generateButton">Kociemba Table Generator</button></div>
+			<details id="progress" hidden="hidden">
+			  <summary><progress id="bar" value="0" max="22484"></progress></summary>
+			  <ol id="details">
+			  </ol>
+			</details>
+			<div id="random"><button id="randomButton">Random</button><button id="clean">Clean</button><button id="clear">Empty</button></div>
+			<div id="solver"><input type="text" id="cube" maxlength="54" spellcheck="false" value="____U________R________F________D________L________B____"><button id="verify">Verify</button><button id="solve" disabled="disabled">Solve</button></div>
+			<div id="settigns">
+				<label for="maxmoves">Max Moves: </label><input type="number" id="maxmoves" value="20" min="16" max="24">
+				<label for="maxtime">Max Time: </label><input type="number" id="maxtime" value="30">
+				<label for="autocomplete">Autocomplete</label> <input type="checkbox" id="autocomplete" checked="unchecked">
+			</div>
+			<div id="entry">
+			  <div id="currentColor"></div>
+			</div>
+		  </div>
+		  <div id="output">
+			<span id="outputText">Solution: <span id="solution"> </span></span>
+		  </div>
+		</div>
+		<div class="sectionHelp" id="solverHelp">
+			<span title="Help">?</span>
+<h2>Rubik's Cube&nbsp;Solver</h2>
+<p>Calculate the solution for a scrambled cube puzzle in only 20&nbsp;steps.</p>
+<p>Set up the scramble pattern, press the Solve button and follow the instructions.</p>
+<p>Use the color picker, apply an algorithm or use a random&nbsp;scramble.</p>
+		</div>
+		<div class="copyright">Rubiks-Cube-Solver.com</div>
+		<a href="#timer" class="scrollLink nextSection"><span>&#10148;</span> Stopwatch</a>
+		<div class="bottomRklm">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- rubikscu.be horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9728962508602593"
+     data-ad-slot="1159895042"
+     data-ad-format="horizontal"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+		</div>
+	</div>
+</section>
+<section>
+	<div id="timer">
+		<div id="test">
+			<div id="time">
+				0.00
+			</div>
+			<div id="touchSensitive" title="Start / Stop Timer">
+			</div>
+			<div id="scrambleAlgorithm" class="algo">
+			</div>
+			<div id="timerControls">
+				<div id="timerScroller">
+					<div id="solutionTimes">
+					</div>
+					<div id="solutionStatistics">
+						<ul>
+							<li><a title="The smallest solution time"><em>Best: </em><span id="statBest"></span></a></li>
+							<li><a title="The biggest solution time"><em>Worst: </em><span id="statWorst"></span></a></li>
+							<li><a title="Average of all solution times"><em>Average: </em><span id="statAvg"></span></a></li>
+							<li class="dontShowOnMobile"><a title="The time situated in the middle when times are in increasing order"><em>Median: </em><span id="statMedian"></span></a></li>
+							<li class="dontShowOnMobile"><a title="Standard Deviation"><em>S Deviation: </em><span id="statSDeviation"></span></a></li>
+							<li><a title="Average of the last 5 times"><em>Avg 5: </em><span id="statAvgLast5"></span></a></li>
+							<li><a title="Mean of the last 5 times, not counting the best and worst results"><em>3 of 5: </em><span id="statLast3of5"></span></a></li>
+							<li class="dontShowOnMobile"><a title="The best 3 of 5 consecutive times, not counting the best and worst results"><em>Best 3 of 5: </em><span id="statBest3of5"></span></a></li>
+							<li><a title="Average of the last 10 times"><em>Avg 12: </em><span id="statAvgLast12"></span></a></li>
+							<li class="dontShowOnMobile"><a title="Mean of the last 12 times, not counting the best and worst results"><em>10 of 12: </em><span id="statLast10of12"></span></a></li>
+							<li><a title="The best 10 of 12 consecutive times, not counting the best and worst results"><em>Best 10 of 12: </em><span id="statBest10of12"></span></a></li>
+						</ul>
+					</div>
+					<div id="wrapTimerSettingz">
+						<a id="timerSettInspect">Inspection</a>
+						<a id="timerSettSound">Sounds</a>
+						<a id="timerSettScramble" class="active">Scramble</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sectionHelp" id="timerHelp">
+			<span title="Help">?</span>
+<h2>Cube&nbsp;Timer</h2>
+<p>Measure your solution times on your journey of becoming a speedcuber!</p>
+<p>Use your Space button or click the clock to start and stop the cube&nbsp;timer.</p>
+<p>With scramble generator and instant statistics calculator.</p>
+		</div>
+		<div class="copyright">Ruwix.com</div>
+		<a href="#tutorial" class="scrollLink nextSection"><span>&#10148;</span> Tutorial</a>
+	</div>
+</section>
+<section>
+	<div id="tutorial">
+		<div class="sectionInfo">
+			<h2>How to Solve the Rubik's&nbsp;Cube?</h2>
+			<p>The beginner's solution guide with images and easy to follow&nbsp;instructions.</p>
+		</div>
+		<div class="grid">
+			<div class="grid-item">
+				<div>
+<p>Knowing how to solve the Rubik's Cube is an impressive skill, and with a bit of patience, it’s easier to learn than you might think. You'll soon discover that solving it doesn’t require genius—just determination and&nbsp;practice!</p>
+<p>In this tutorial we are going to use the easiest layer-by-layer&nbsp;method.</p>
+				</div>
+			</div>
+			<div class="grid-item"><span>💡</span>
+				<div>
+					<div>
+						It's advised to watch the attached <a class="scrollLink" href="#video">video tutorial</a> while using this cheat sheet explaining each&nbsp;step.
+					</div>
+				</div>
+			</div>
+			<div class="grid-item"><span>1</span>
+				<div>
+					<div>
+						<h3>White Edges</h3>
+						<p>Let's&nbsp;start with the white face. Try to form a <strong>white plus sign</strong> on the top of the cube, making sure that the colors of the side stickers also match the colors of the lateral&nbsp;centers. This&nbsp;step shouldn't be too hard. First, try to do it without reading the examples&nbsp;below, taking the time to familiarize yourself with the&nbsp;puzzle.</p>
+						<div class="centeralign"><img width="250" height="110" src="/img/ok-bad-white-edges.png" alt="white edges correct way"></div>
+						<p>We can easily insert the edge to the top if you move it to the highlighted bottom-front spot first. Depending on where the white sticker is facing do the&nbsp;rotations.</p>
+						<div class="centeralign"><img width="400" height="93" src="/img/insert-first-edge.png" alt="insert first edge"></div>
+						<table class="fullwidth">
+							<tbody>
+								<tr>
+									<td><strong>Case A:</strong><br>White sticker facing&nbsp;down:</td>
+									<td><span class="algo">F F</span></td>
+								</tr>
+								<tr>
+									<td><strong>Case B:</strong><br>White sticker facing &nbsp;you:</td>
+									<td><span class="algo">D R F' R'</span></td>
+								</tr>
+							</tbody>
+						</table>
+						<p><strong>Case C:</strong><br>When&nbsp;the white edge is stuck between two solved edges  you can send it to the bottom layer doing&nbsp;this:</p>
+						<div class="centeralign"><span class="algo">L D L'</span></div>
+						<p><img width="100" height="100" class="floatRight" src="/img/face-rotations.png" alt="face rotation letters">I&nbsp;used&nbsp;capital letters to mark the clockwise face rotations: <strong>F</strong>&nbsp;(front), <strong>R</strong>&nbsp;(right), <strong>L</strong>&nbsp;(left), <strong>U</strong>&nbsp;(up), <strong>D</strong>&nbsp;(down).</p>
+						<p>Turns in the opposite direction are marked with an apostrophe.&nbsp;(')</p>
+						<a class="moreLink" target="_blank" rel="nofollow" href="https://ruwix.com/the-rubiks-cube/how-to-solve-the-rubiks-cube-beginners-method/step-1-first-layer-edges/">Examples</a>
+					</div>
+				</div>
+			</div>
+			<div class="grid-item"><span>2</span>
+				<div>
+					<div>
+						<h3>Finish The White Face</h3>
+						<p><img width="130" height="130" class="floatRight" src="/img/cube-white-corners.png" alt="solve cube white corners">When&nbsp;the white edges are solved we can move on to solve the <strong>white&nbsp;corners</strong>.</p>
+						<p>First, place the white corner corresponding to the position marked by the upper arrow into one of the highlighted spots. Next, repeat the algorithm below until the white piece comes to its desired destination.</p>
+						<p class="centeralign"><span class="algo">R' D' R D</span></p>
+						<p>This trick sends the piece back and forth between the top and bottom locations, <img width="90" height="90" class="floatRight" src="/img/solved-white.png" alt="solved white face">twisting&nbsp;the corner in each&nbsp;step. Using&nbsp;this trick you can solve each white corner in less than 6&nbsp;iterations.</p>
+						<p>At the end your cube should have a solid white face with the lateral stickers matching the lateral&nbsp;centers.</p>
+						<a class="moreLink" target="_blank" rel="nofollow" href="https://cubesolve.com/#white-corners">Examples</a>
+					</div>
+				</div>
+			</div>
+			<div class="grid-item"><span>3</span>
+				<div>
+					<div>
+						<h3>Center Layer</h3>
+						<p>Turn your cube upside down because we don't need to work with the white face	 anymore.</p>
+						<p>We have a trick to insert an edge piece from the top-front position to the middle layer. Do the "Left" or "Right" algorithm depending on which side you have to insert the&nbsp;piece:</p>
+						<p class="centeralign"><img width="250" height="114" src="/img/center-layer.png" alt="how to do center layer"></p>
+						<table class="fullwidth">
+							<tbody>
+								<tr>
+									<td><strong>Left:&nbsp; </strong></td>
+									<td><span class="algo">U' L' U L U F U' F'</span></td>
+								</tr>
+								<tr>
+									<td><strong>Right:&nbsp; </strong></td>
+									<td><span class="algo">U R U' R' U' F' U F</span></td>
+								</tr>
+							</tbody>
+						</table>
+						<p><img width="90" height="90" class="floatRight" src="/img/solved-center.png" alt="solved center layer">When a center layer piece is in its correct position, but oriented incorrectly then use the same algorithm to take it out, inserting another piece to replace it temporarily.</p>
+						<p>You'll have two solved layers when you finish this stage. <br>We're almost&nbsp;there.</p>
+						<a class="moreLink" target="_blank" rel="nofollow" href="https://cubesolve.com">More...</a>
+					</div>
+				</div>
+			</div>
+			<div class="grid-item"><span><em>Ad</em></span>
+				<div>
+					<div>
+						<div class="marginBottom40 rklBack">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9728962508602593" crossorigin="anonymous"></script>
+<!-- rubikscubesolver_300x250 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-9728962508602593"
+     data-ad-slot="9110004037"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="grid-item"><span>4</span>
+				<div>
+					<div>
+						<h3>Yellow Cross</h3>
+						<p>Inspect the top of your cube. You will see either a dot, an L-shape, a line or a yellow cross. Our goal is to form a yellow&nbsp;cross and we have a trick to go from one state to the&nbsp;other:</p> 
+						<div class="centeralign"><img width="400" height="82" src="/img/how-to-solve-rubiks-cube.png" alt="how to solve the rubiks cube"></div>
+						<p class="centeralign"><span class="algo">F R U R' U' F'</span></p>
+						<p>Use this algorithm to shift from one shape to the next&nbsp;one.</p>
+						<a class="moreLink" target="_blank" rel="nofollow" href="https://ruwix.com/the-rubiks-cube/how-to-solve-the-rubiks-cube-beginners-method/step-4-yellow-cross/">More...</a>
+					</div>
+				</div>
+			</div>
+			<div class="grid-item"><span>5</span>
+				<div>
+					<div>
+						<h3>Swap Edges</h3>
+						<p>We have a yellow cross on the top but the edges are not in their final position yet. They need to match the side&nbsp;colors.</p>
+						<div class="centeralign"><img width="140" height="140" src="/img/swap-yellow-edges.png" alt="swap rubiks cube edges"></div>
+						<p class="centeralign"><span class="algo">R U R' U R U U R' U</span></p>
+						<p>Use these steps to swap the front and left yellow edges in the top&nbsp;layer.</p>
+					</div>
+				</div>
+			</div>
+			<div class="grid-item"><span>6</span>
+				<div>
+					<div>
+						<h3>Cycle Corners</h3>
+						<p>Only the yellow corners are left unsolved at this&nbsp;point. Now&nbsp;we are going to put them in their final position and we'll rotate them in the last&nbsp;step.</p>
+						<p>Use the algorithm below to cycle the pieces in the direction marked with the arrows while the top-right-front piece is standing still.</p>
+						<div class="centeralign"><img width="150" height="150" src="/img/cycle-rubiks-cube-algorithm.png" alt="cycle rubik algorithm"></div>
+						<div class="centeralign"><span class="algo">U R U' L' U R' U' L</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="grid-item"><span>7</span>
+				<div>
+					<div>
+						<h3>Orient Corners</h3>
+						<p>Everything is positioned, we just have to orient the yellow corners. We use the same algorithm that we used for solving the white corners in the second step:</p>
+						<p class="centeralign"><span class="algo">R' D' R D</span></p>
+						<p>This step can be confusing for most people so read the explanation very carefully and do exactly what it says!</p>
+						<p><img width="120" height="120" src="/img/rotate-final-pieces.png" alt="rotate pieces rubiks cube solution" class="floatRight">1.&nbsp;Hold&nbsp;the cube in your hand having an unsolved yellow corner in the highlighted top-right-front position. <br>
+						2. Repeat the algorithm until this piece is solved.<br>
+						3. Turn the top layer to bring another unsolved piece in the highlighted position.<br>
+						4. Repeat <strong>R' D' R D</strong> until that one is also solved.<br>
+						5. Do 3 and 4 for any other unsolved yellow corner.</p>
+						<p><strong>Important!</strong><br>⚠️ During the process it might seem that you have messed up the whole cube but don't worry because it will come together if you do it correctly, following the instructions.<br>⚠️ Always complete the whole <strong>R' D' R D</strong> algorithm, even if you see the yellow sticker pointing up. You still have to make a final D&nbsp;turn.</p>
+						<a class="moreLink" target="_blank" rel="nofollow" href="https://ruwix.com/the-rubiks-cube/how-to-solve-the-rubiks-cube-beginners-method/orient-yellow-corners-how-to-solve-last-layer-corner/">Examples</a>
+					</div>
+				</div>
+			</div>
+			<div class="grid-item" id="video"><span>+</span>
+				<div>
+					<div>
+						<h3>Video Tutorial</h3>
+						<p>Watch these steps being explained in this video:</p>
+						<p class="centeralign"><iframe class="respVid" src="https://www.youtube.com/embed/VeeFwwAz7no?rel=0" frameborder="0" allowfullscreen></iframe></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">CubeSolve.com</div>
+		<a href="#intro" class="scrollLink nextSection"><span>&#10148;</span> Back to top</a>
+	</div>
+</section>
+
+
+<div id="footnote">
+<div class="socialIcons">
+	<a href="https://www.facebook.com/sharer.php?u=https://rubikscu.be" target="_blank" rel="nofollow" title="Share on Facebook" class="shareFb"></a>
+	<a href="https://x.com/intent/post?url=https%3A%2F%2Frubikscu.be" target="_blank" rel="nofollow" title="Share on X.com" class="shareTw"></a>
+</div>
+<article>	
+<h1>Rubik’s Cube Simulator, Solver, Timer and Tutorial</h1>
+<p><strong>Play with&nbsp;the <a href="#simulator">Rubik's Cube&nbsp;simulator</a>, calculate the solution in 20 steps with&nbsp;the <a href="#cubesolver">online&nbsp;solver</a>, measure your times&nbsp;with <a href="#timer">the&nbsp;stopwatch</a>, and learn the easiest solution method with the beginners' layer by&nbsp;layer&nbsp;<a href="#tutorial">tutorial</a>.</strong></p>
+<hr />
+<p>If&nbsp;you're fascinated by the colorful puzzle that has challenged and delighted millions worldwide, you've come to the right&nbsp;place! <strong>RubiksCu.be</strong> offers the most important tools and resources for Rubik's Cube enthusiasts of all skill levels in one place. Whether you're picking up a cube for the first time or refining your speed-solving techniques, we have something for&nbsp;everyone.</p>
+<h3><a class="scrollLink" href="#simulator">🕹️ Try to Solve the Cube Online, with the&nbsp;Simulator</a></h3>
+<p>Ever&nbsp;wanted to experiment with a Rubik's Cube without worrying about losing your current state or messing up your physical cube?&nbsp;Our <a class="scrollLink" href="#simulator">Rubik's Cube&nbsp;Simulator</a> is the perfect tool for virtual exploration. Test&nbsp;out new moves, understand cube mechanics, and try daring twists from the comfort of your device. The&nbsp;simulator is working intuitively, making it ideal for both beginners and experienced&nbsp;solvers.</p>
+<h3><a class="scrollLink" href="#cubesolver">🤖 Calculate the Optimal Solution in 20&nbsp;Moves</a></h3>
+<p>For&nbsp;those stuck in the middle of a scramble or looking for the most efficient way to solve a cube,&nbsp;our <a class="scrollLink" href="#cubesolver">Online&nbsp;Solver</a> is here to help. Powered by the Kociemba algorithm, this tool can calculate solutions in as few as 20 moves. <br />Simply&nbsp;input your cube's current scramble, and let the solver guide you step-by-step to completion.</p>
+<h3><a class="scrollLink" href="#timer">⌛ Measure Your Speed with the&nbsp;Stopwatch</a></h3>
+<p>Speedcubing is all about timing.&nbsp;Our <a class="scrollLink" href="#timer">Timer</a> is designed especially for speedcubing with automatic scramble generator. It&nbsp;starts when you release the trigger (mouse or space bar) and stops immediately as you press it down again. <br />Whether you're competing against friends or setting a personal record, the stopwatch ensures every millisecond is accounted&nbsp;for.</p>
+<h3><a class="scrollLink" href="#tutorial">🎓 Learn the Easiest&nbsp;Solution</a></h3>
+<p>Solving the Rubik's Cube doesn't have to be intimidating.&nbsp;Our <a class="scrollLink" href="#tutorial">Beginner's&nbsp;Tutorial</a> breaks down the layer-by-layer method, making it accessible to anyone willing to learn. With&nbsp;clear instructions and visual guides, you'll move from beginner to confident solver in no time. <br />This&nbsp;tutorial has&nbsp;a <a class="scrollLink" href="#video">video</a> attached and it's perfect for those just starting their Rubik's Cube journey or anyone looking to refresh&nbsp;their&nbsp;skills.</p>
+<hr>
+</article>
+<footer>
+<p><a href="/app/">Mobile Site&nbsp;📱</a></p>
+<p>Buy TikTok followers today on&nbsp;<a href="https://buzzoid.com/" target="_blank">Buzzoid</a>. <!-- until 2026-sep-23 -7509 8+pack --></p>
+<p>This website is using cookies to collect anonymous visitor analytics and to show personalized&nbsp;ads. You&nbsp;can disable them in your browser&nbsp;settings.</p>
+<p>We&nbsp;are not collecting personal data but we use plugins that might do: Cloudflare, Google Analytics, AdSense, Facebook widgets&nbsp;etc. T&amp;C and Privacy Policy applies.</p>
+<p>This website is not associated with the Rubik's Cube&trade; brand. The term Rubik's Cube refers to 3-dimmensional 3x3x3 cube puzzles&nbsp;in&nbsp;general.</p>
+<p>Programs&nbsp;used: Chrome Cube&nbsp;Lab, Kociemba solver&nbsp;algorithm, Ruwix&nbsp;timer.</p>
+<p>Please&nbsp;share or save this link if you like the&nbsp;website.</p>
+<p>&copy;&nbsp;RubiksCu.be</p>
+<div class="printOnly">
+	For the online version visit <span>&copy;&nbsp;&nbsp;RubiksCu.be</span>
+</div>
+<div class="back2topScroll" title="Scroll to top">
+	<svg class="circleSvg" viewBox="0 0 100 100">
+		<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+	</svg>
+</div>
+</footer>
+</div>
+<script>
+$(document).ready( function(){
+	updateActiveSection();
+	var magas = window.innerHeight - 10;
+	if (magas < 500) {	magas = 500;	}
+	$('#container, #tutorial, #cubesolver, #timer').css('min-height', magas);
+	setTimeout(function () {
+		initCube3d();
+		$('.grid').masonry({
+		  itemSelector: '.grid-item',
+		  columnWidth: 100
+		});
+	}, 100);
+	$(document).on('scroll', function() {
+		updateActiveSection();
+	})
+});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"c6f38ddc190f4fddb08a31d6d85fb546","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
